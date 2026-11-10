@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Tickets</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2 class="logo">IPL TICKETS</h2>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#matches">Matches</a></li>
+                <li><a href="booking.html">Book Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+
+        <div class="booking-container">
+
+            <h1>Book Your Tickets</h1>
+            <p class="booking-intro">
+                Fill in your details to reserve your seats.
+            </p>
+
+            <form id="ticket-form">
+
+                <!-- Personal Information -->
+                <h2>Personal Information</h2>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        minlength="2"
+                        maxlength="50"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@gmail.com"
+                        maxlength="100"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="10-digit mobile number"
+                        pattern="[6-9][0-9]{9}"
+                        minlength="10"
+                        maxlength="10"
+                        required>
+                </div>
+
+                <!-- Match Selection -->
+                <h2>Match Details</h2>
+
+                <div class="form-group">
+                    <label for="match-select">Select Match</label>
+
+                    <select id="match-select" name="match" required>
+                        <option value="">-- Select a Match --</option>
+                    </select>
+                </div>
+
+                <!-- Stand Selection -->
+                <div class="form-group">
+                    <label>Select Stand Category</label>
+
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="general"
+                            name="stand"
+                            value="General"
+                            required>
+                        <label for="general">General</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="premium"
+                            name="stand"
+                            value="Premium">
+                        <label for="premium">Premium</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input
+                            type="radio"
+                            id="vip"
+                            name="stand"
+                            value="VIP">
+                        <label for="vip">VIP</label>
+                    </div>
+                </div>
+
+                <!-- Number of Tickets -->
+                <div class="form-group">
+                    <label for="quantity">Number of Tickets</label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        min="1"
+                        max="10"
+                        value="1"
+                        required>
+                </div>
+
+                <!-- Terms -->
+                <div class="form-group checkbox-option">
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required>
+
+                    <label for="terms">
+                        I agree to the booking terms and conditions.
+                    </label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-group">
+                    <button type="submit" class="btn">Confirm Booking</button>
+                    <button type="reset" class="reset-btn">Reset Form</button>
+                </div>
+
+                <p id="form-message" class="form-message"></p>
+
+            </form>
+
+            <!-- Booking Summary -->
+            <div class="booking-summary">
+
+                <h2>Booking Summary</h2>
+
+                <p>Match: <span id="summary-match">Not selected</span></p>
+                <p>Venue: <span id="summary-venue">—</span></p>
+                <p>Stand: <span id="summary-stand">Not selected</span></p>
+                <p>Price per ticket: <span id="summary-price">₹0</span></p>
+                <p>Number of tickets: <span id="summary-quantity">1</span></p>
+
+                <h3>Total Amount: <span id="summary-total">₹0</span></h3>
+
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 IPL Ticket Booking</p>
+    </footer>
+
+</body>
+</html>
